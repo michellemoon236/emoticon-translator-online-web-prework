@@ -15,7 +15,7 @@ end
 
 def get_japanese_emoticon (file, given_emoticon)
   library = load_library(file)
-  if library["get_emoticon"].include?(given_emoticon)
+  if library["get_emoticon"].has_key?(given_emoticon)
     library["get_emoticon"][given_emoticon]
   else
     "Sorry, that emoticon was not found"
@@ -24,7 +24,7 @@ end
 
 def get_english_meaning (file, given_emoticon)
   library = load_library(file)
-  if library["get_meaning"].include?(given_emoticon)
+  if library["get_meaning"].has_key?(given_emoticon)
     library["get_meaning"][given_emoticon]
   else
     "Sorry, that emoticon was not found"
